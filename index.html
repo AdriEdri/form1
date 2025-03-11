@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claw Machine Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+        <p>Loading...</p>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent">
+        
+        <!-- Homepage (Landing Page) -->
+        <div id="homepage">
+            <h1>Welcome to Claw Machine</h1>
+
+            <!--claw machine image-->
+            <div class="clawmachine">
+                <img src="assets/homeclaw.png" alt="claw machine">
+            </div>
+            <!-- Button Container -->
+            <div class="button-container">
+                <button class="btn" onclick="showGame()">Play Now</button>
+                <button class="btn" onclick="openPopup('howToPlayPopup')">How to Play</button>
+                <button class="btn" onclick="openPopup('aboutPopup')">About This Game</button>
+            </div>
+        </div>
+
+        <!-- Base Game Page (Snag Frenzy) -->
+        <div id="gamePage" style="display: none;">
+            <h2>Claw Machine Game</h2>
+        </div>
+    </div>
+
+    <!-- Pop-ups -->
+    <div id="howToPlayPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closePopup('howToPlayPopup')">&times;</span>
+            <h2>How to Play</h2>
+            <img class="popup-img" src="claw_machine_controls.png" alt="How to Play">
+            <p>Move: <strong>Left & Right Arrow Keys</strong></p>
+            <p>Catch: <strong>Press Spacebar</strong></p>
+        </div>
+    </div>
+
+    <div id="aboutPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closePopup('aboutPopup')">&times;</span>
+            <h2>About This Game</h2>
+            <p>This is a fun claw machine game where you try to grab prizes!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
