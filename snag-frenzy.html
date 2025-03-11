@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snag frenzy!</title>
+    <link rel="stylesheet" href="snag-frenzy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="game-container">
+        <h1>Snag frenzy!</h1>
+
+        <h3>Collectibles Gallery</h3>
+        <div class="collectibles-list">
+            <div class="collectibles common" data-rarity="common">Rock</div>
+            <div class="collectibles uncommon" data-rarity="uncommon">Cat</div>
+            <div class="collectibles uncommon" data-rarity="uncommon">Dog</div>
+            <div class="collectibles ultraRare" data-rarity="ultraRare">Fish-Holding Otter</div>
+            <div class="collectibles rare" data-rarity="rare">Teddy Bear</div>
+            <div class="collectibles ultraRare" data-rarity="ultraRare">Frog</div>
+            <div class="collectibles legendary" data-rarity="legendary">👽</div>
+        </div>
+
+        <div class="controls-guide">
+            <p><strong>Controls:</strong> Use Left/Right arrows to move, Spacebar to grab!</p>
+            <p>You have <span id="timer-display">10</span> seconds to grab something!</p>
+        </div>
+
+        <div id="coins-display">Coins: </div>
+
+        <div id="machine">
+
+            <div class="timer-bar">
+                <div class="timer-progress"></div>
+            </div>
+            <div id="claw">
+                <div class="claw-part claw-left"></div>
+                <div class="claw-part claw-center"></div>
+                <div class="claw-part claw-right"></div>
+            </div>
+            <div id="container"></div>
+            <div id="coin-slot">
+                <div id="coin-slot-inner">Insert Coin</div>
+            </div>
+        </div>
+        <div id="result">Welcome to Snag Frenzy! Insert a coin to start.</div>
+
+        <h3>Your Collection</h3>
+        <div class="inventory" id="inventory">
+            <!-- Collected items will appear here -->
+        </div>
+    </div>
+
+    <script src="snag-frenzy.js"></script>
+</body>
+
+</html>

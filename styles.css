@@ -40,6 +40,10 @@ body {
     transition: width 3s linear;
 }
 
+#homepage h1 {
+    font-size: 60px;
+}
+
 /* Main Content */
 #mainContent {
     display: none;
@@ -61,6 +65,8 @@ body {
 }
 
 .btn {
+    text-decoration: none;
+    font-family: 'Pixelify Sans', sans-serif;
     background-color: #ff85a2;
     color: white;
     border: none;
@@ -85,6 +91,10 @@ body {
 
     .btn {
         width: 200px;
+    }
+
+    #homepage h1 {
+        font-size: 46px;
     }
 }
 

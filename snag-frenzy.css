@@ -1,0 +1,306 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    background-color: #cabcee;
+    margin: 0;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, #cabcee, #a18ad4);
+    min-height: 100vh;
+}
+
+h1 {
+    color: #5a3b8c;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 2.5rem;
+}
+
+#game-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#coins-display {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5a3b8c;
+    margin: 10px 0;
+    background-color: #e6d8ff;
+    padding: 10px;
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.collectibles-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.collectibles {
+    background-color: #e6d8ff;
+    padding: 8px 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.collectibles:hover {
+    transform: scale(1.05);
+}
+
+.collectibles.common {
+    border: 2px solid #9e9e9e;
+}
+
+.collectibles.uncommon {
+    border: 2px solid #4caf50;
+}
+
+.collectibles.rare {
+    border: 2px solid #2196f3;
+}
+
+.collectibles.ultraRare {
+    border: 2px solid #9c27b0;
+}
+
+.collectibles.legendary {
+    border: 2px solid #ffc107;
+    background: linear-gradient(135deg, #e6d8ff, #ffd700);
+}
+
+#machine {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    margin: 30px auto;
+    border: 8px solid #333;
+    border-style: double;
+    background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#claw {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translateX(-50%);
+    z-index: 10;
+    transition: left 0.3s ease, top 1.5s ease;
+}
+
+#claw::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 40px;
+    background-color: #444;
+    transform: translateX(-50%);
+}
+
+.claw-part {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background-color: silver;
+    border: 2px solid #444;
+    border-radius: 0 0 5px 5px;
+}
+
+.claw-left {
+    left: 5px;
+    transform: rotate(-10deg);
+}
+
+.claw-right {
+    right: 5px;
+    transform: rotate(10deg);
+}
+
+.claw-center {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.grabbing .claw-left {
+    transform: rotate(-30deg);
+    transition: transform 0.5s ease;
+}
+
+.grabbing .claw-right {
+    transform: rotate(30deg);
+    transition: transform 0.5s ease;
+}
+
+#container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    perspective: 800px;
+}
+
+.item {
+    font-size: 35px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+    transform-style: preserve-3d;
+}
+
+.item:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+#coin-slot {
+    position: absolute;
+    right: -5px;
+    top: 50px;
+    width: 100px;
+    height: 40px;
+    background-color: #ffd700;
+    border: 3px solid #b8860b;
+    border-radius: 8px 0 0 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+}
+
+#coin-slot:hover {
+    background-color: #ffec8b;
+    transform: translateX(-3px);
+}
+
+#coin-slot:active {
+    background-color: #cd950c;
+    transform: translateX(-5px);
+}
+
+#coin-slot-inner {
+    font-size: 16px;
+    font-weight: bold;
+    color: #8b4513;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    min-height: 30px;
+    padding: 15px;
+    background-color: #e6d8ff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+}
+
+.result-win {
+    background-color: #c8e6c9 !important;
+    color: #2e7d32 !important;
+}
+
+.result-lose {
+    background-color: #ffcdd2 !important;
+    color: #c62828 !important;
+}
+
+.controls-guide {
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #e6d8ff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.timer-bar {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.timer-progress {
+    height: 100%;
+    width: 100%;
+    background-color: #5a3b8c;
+    transition: width linear;
+}
+
+.inventory {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.inventory-item {
+    background-color: #e6d8ff;
+    padding: 8px 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.new-item {
+    animation: bounce 0.5s ease 3;
+}
+
+@media (max-width: 600px) {
+    #machine {
+        width: 300px;
+        height: 400px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #coins-display,
+    #result {
+        font-size: 18px;
+    }
+}
