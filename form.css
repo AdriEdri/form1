@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+/* Center the form */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ffc1dc; 
+    margin: 0;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+/* Form container */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* Input box styling */
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Label styling */
+.input-box label {
+    display: block;
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Input and textarea styling */
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid gray; 
+    outline: none;
+    padding: 10px 5px;
+    font-size: 16px;
+    background: transparent;
+    transition: border-color 0.3s ease;
+}
+
+/* Underline effect */
+.input-box input:focus,
+.input-box textarea:focus {
+    border-bottom: 2px solid pink; 
+}
+
+/* Submit button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: pink; 
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s ease;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+button:hover {
+    opacity: 0.9;
+}
